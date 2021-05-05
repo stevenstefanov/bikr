@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS bikr_db;
+CREATE DATABASE bikr_db;
