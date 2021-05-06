@@ -5,23 +5,54 @@ class Bike extends Model {}
 
 Bike.init(
     {
+        // Listing ID
         id: {
           type: DataTypes.INTEGER,
           allowNull: false,
           primaryKey: true,
           autoIncrement: true,
         },
+        // Title of the bike posting
+        title: {
+            type: DataTypes.STRING,
+            allowNull: false,
+          },
+        // Bike type
+        type: {
+            type: DataTypes.STRING,
+            allowNull: false,
+          },
+        // Model of the bike
         model: {
           type: DataTypes.STRING,
           allowNull: false,
         },
+        // Seller's description of the bike
         description: {
             type: DataTypes.STRING,
         },
+        // Frame size
+        frame_size: {
+            type: DataTypes.INTEGER,
+        },
+         // Wheel size
+         wheel_size: {
+            type: DataTypes.INTEGER,
+        },
+        // Color of the bike
+        color: {
+            type: DataTypes.STRING,
+        },
+        // New, like new, used, for parts
+        condition: {
+            type: DataTypes.STRING,
+        },
+        // Selling price
         price: {
             type: DataTypes.FLOAT,
             allowNull: false,
           },
+        //Location of bike for sale
         zipcode: {
             type: DataTypes.INTEGER,
             allowNull: false,
