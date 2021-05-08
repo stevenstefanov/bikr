@@ -12,18 +12,23 @@ Bike.init(
           primaryKey: true,
           autoIncrement: true,
         },
+        date_created: {
+          type: DataTypes.DATE,
+          allowNull: false,
+          defaultValue: DataTypes.NOW,
+        },
         // Title of the bike posting
         title: {
             type: DataTypes.STRING,
             allowNull: false,
           },
-        // Bike type
+        // Bike type (mountain bike, race bike, city bike, etc)
         type: {
             type: DataTypes.STRING,
             allowNull: false,
           },
-        // Model of the bike
-        model: {
+        // brand of the bike
+        brand: {
           type: DataTypes.STRING,
           allowNull: false,
         },
@@ -60,10 +65,13 @@ Bike.init(
                 len: [5],
               },
         },
+<<<<<<< HEAD
         image: {
           type: DataTypes.STRING,
           allowNull: true
         }
+=======
+>>>>>>> main
       },
       {
         sequelize,

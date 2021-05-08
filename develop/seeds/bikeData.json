@@ -1,0 +1,54 @@
+[
+    {
+        "title": "Selling amazing Trek bike",
+        "type": "Mountain Bike",
+        "brand": "Trek",
+        "description": "Selling bike in perfect condition. Must pick up.",
+        "frame_size": "12",
+        "wheel_size": "18",
+        "color": "blue",
+        "condition": "used",
+        "price": "700",
+        "zipcode": "11101",
+        "date_created": "2021-05-05 16:17:50"
+    },
+    {
+        "title": "Selling Specialized bike",
+        "type": "Road Bike",
+        "brand": "Specialized",
+        "description": "Selling my road bike. Don't have room for it anymore.",
+        "frame_size": "12",
+        "wheel_size": "16",
+        "color": "green",
+        "condition": "used",
+        "price": "900",
+        "zipcode": "11222",
+        "date_created": "2021-04-29 16:17:50"
+    },
+    {
+        "title": "Gary Fisher Bike for Sale",
+        "type": "Mountain Bike",
+        "brand": "Gary Fisher",
+        "description": "Bike was my son's. He outgrew it so we are selling. It is in great condition.",
+        "frame_size": "10",
+        "wheel_size": "10",
+        "color": "red",
+        "condition": "used",
+        "price": "300",
+        "zipcode": "11101",
+        "date_created": "2021-05-03 16:17:50"
+    },
+    {
+        "title": "Selling brand new Trek!!",
+        "type": "Road Bike",
+        "brand": "Trek",
+        "description": "Selling brand new bike in perfect condition. Must pick up.",
+        "frame_size": "14",
+        "wheel_size": "18",
+        "color": "blue",
+        "condition": "new",
+        "price": "1600",
+        "zipcode": "10001",
+        "date_created": "2021-05-04 16:17:50"
+    }
+]
