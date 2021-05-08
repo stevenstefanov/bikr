@@ -22,13 +22,13 @@ Bike.init(
             type: DataTypes.STRING,
             allowNull: false,
           },
-        // Bike type
+        // Bike type (mountain bike, race bike, city bike, etc)
         type: {
             type: DataTypes.STRING,
             allowNull: false,
           },
-        // Model of the bike
-        model: {
+        // brand of the bike
+        brand: {
           type: DataTypes.STRING,
           allowNull: false,
         },
