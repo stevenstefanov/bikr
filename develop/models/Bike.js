@@ -12,6 +12,11 @@ Bike.init(
           primaryKey: true,
           autoIncrement: true,
         },
+        date_created: {
+          type: DataTypes.DATE,
+          allowNull: false,
+          defaultValue: DataTypes.NOW,
+        },
         // Title of the bike posting
         title: {
             type: DataTypes.STRING,
@@ -59,7 +64,7 @@ Bike.init(
             validate: {
                 len: [5],
               },
-        }
+        },
       },
       {
         sequelize,

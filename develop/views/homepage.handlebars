@@ -1,21 +1,21 @@
 <!-- Loop over each object in the projects array -->
 {{#each bikes as |bike| }}
-<div class="row mb-4 project">
-  <div class="col-md-5">
-    <h2>
-      <!-- Call helper function with triple brackets to render the emoji span as HTML -->
-      <a href="/bicycles/{{bike.id}}">{{bike.title}}</a>
-    </h2>
-    <p>
-      <!-- Pass needed_funding value to the helper function -->
-      <span class="dollar-amount">{{bike.price}}</span>
-    </p>
-    <p>Created by {{bike.user.name}} on {{bike.date_created}}</p>
-  </div>
-  <div class="col-md-7">
-    <p>
-      {{bike.description}}
-    </p>
-  </div>
-</div>
+
+<div class="card section-bikeProfile">
+        <h2>
+          <a href="/bicycles/{{bike.id}}">{{bike.title}}</a>
+        </h2>
+        <img class="card-img" src="https://mbaction.com/wp-content/uploads/2019/06/GaryFisher_June1989_4mb.jpg">
+        <div class="teamStatsTable">
+            <div class="nba-title">Price: {{bike.price}}</div>
+            
+            <table>
+                <tr>
+                    <td class="statsKeyTitle">Posted by: {{bike.user.name}} on {{format_date bike.date_created}}</td>
+                </tr>
+                <tr>
+                    <p>{{bike.description}}</p>
+                </tr>
+            </table>
+        </div>
 {{/each}}
