@@ -9,7 +9,8 @@
         "color": "blue",
         "condition": "used",
         "price": "700",
-        "zipcode": "11101"
+        "zipcode": "11101",
+        "date_created": "2021-05-05 16:17:50"
     },
     {
         "title": "Selling Specialized bike",
@@ -21,7 +22,8 @@
         "color": "green",
         "condition": "used",
         "price": "900",
-        "zipcode": "11222"
+        "zipcode": "11222",
+        "date_created": "2021-04-29 16:17:50"
     },
     {
         "title": "Gary Fisher Bike for Sale",
@@ -33,7 +35,8 @@
         "color": "red",
         "condition": "used",
         "price": "300",
-        "zipcode": "11101"
+        "zipcode": "11101",
+        "date_created": "2021-05-03 16:17:50"
     },
     {
         "title": "Selling brand new Trek!!",
@@ -45,6 +48,7 @@
         "color": "blue",
         "condition": "new",
         "price": "1600",
-        "zipcode": "10001"
+        "zipcode": "10001",
+        "date_created": "2021-05-04 16:17:50"
     }
 ]
