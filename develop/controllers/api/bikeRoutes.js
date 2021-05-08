@@ -1,8 +1,19 @@
 const router = require('express').Router();
 const { Bike } = require('../../models');
 const withAuth = require('../../utils/auth');
+const multer = require('multer');
+const cloudinary = require('cloudinary').v2;
+const streamifier = require('streamifier');
 
-router.post('/', withAuth, async (req, res) => {
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUD_KEY,
+    api_secret: process.env.CLOUD_SECRET
+});
+
+const fileUpload = multer();
+
+router.post('/', withAuth, fileUpload.single('image'),  async (req, res) => {
   try {
     const newBike = await Bike.create({
       ...req.body,
@@ -14,6 +25,35 @@ router.post('/', withAuth, async (req, res) => {
     res.status(400).json(err);
   }
 });
+
+router.patch('/:id/uploadImage', fileUpload.single('image'), async (req, res) => {
+  try {
+    const upload = req => {
+      return new Promise( (resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream((error, result) => {
+            if (error) reject (error);
+            else resolve( result );
+        });
+
+        streamifier.createReadStream(req.file.buffer).pipe(stream);
+      });
+    }
+
+    let result = await upload(req);
+
+    const updatedBike = await Bike.Update({
+      image: result.secure_url
+    },
+    {
+      where: { id : req.params.id }
+    });
+
+    res.json(updatedBike);
+  } catch (err) {
+    res.status(500).json(err)
+  }
+
+} )
 
 router.delete('/:id', withAuth, async (req, res) => {
   try {

@@ -1,36 +1,22 @@
-const fs = require("fs");
+const cloudinary = require('cloudinary').v2;
+const streamifier = require('streamifier');
 
-const db = require("../models");
-const Image = db.images;
+cloudinary.config({
+    cloud_name: process.env.CLOUD_NAME,
+    api_key: process.env.CLOUD_KEY,
+    api_secret: process.env.CLOUD_SECRET
+});
 
-const uploadFiles = async (req, res) => {
-  try {
-    console.log(req.file);
+const upload = async (req, res, next) => {
+    return new Promise( (resolve, reject) => {
+        const stream = cloudinary.uploader.upload_stream((error, result) => {
+            if (error) reject (error);
+            else resolve( result );
+        });
 
-    if (req.file == undefined) {
-      return res.send(`You must select a file.`);
-    }
-
-    Image.create({
-      type: req.file.mimetype,
-      name: req.file.originalname,
-      data: fs.readFileSync(
-        __basedir + "/resources/static/assets/uploads/" + req.file.filename
-      ),
-    }).then((image) => {
-      fs.writeFileSync(
-        __basedir + "/resources/static/assets/tmp/" + image.name,
-        image.data
-      );
-
-      return res.send(`File has been uploaded.`);
-    });
-  } catch (error) {
-    console.log(error);
-    return res.send(`Error when trying upload images: ${error}`);
-  }
+        streamifier.createReadStream(req.file.buffer).pipe(stream);
+        next();
+    })
 };
 
-module.exports = {
-  uploadFiles,
-};
+module.exports = upload;

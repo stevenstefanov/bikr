@@ -59,6 +59,10 @@ Bike.init(
             validate: {
                 len: [5],
               },
+        },
+        image: {
+          type: DataTypes.STRING,
+          allowNull: true
         }
       },
       {
