@@ -13,7 +13,7 @@ cloudinary.config({
 
 const fileUpload = multer();
 
-router.post('/', withAuth, fileUpload.single('image'),  async (req, res) => {
+router.post('/', withAuth,  async (req, res) => {
   try {
     const newBike = await Bike.create({
       ...req.body,
@@ -41,7 +41,9 @@ router.patch('/:id/uploadImage', fileUpload.single('image'), async (req, res) =>
 
     let result = await upload(req);
 
-    const updatedBike = await Bike.Update({
+    console.log( result );
+
+    const updatedBike = await Bike.update({
       image: result.secure_url
     },
     {
@@ -50,6 +52,7 @@ router.patch('/:id/uploadImage', fileUpload.single('image'), async (req, res) =>
 
     res.json(updatedBike);
   } catch (err) {
+    console.log(err)
     res.status(500).json(err)
   }
 
