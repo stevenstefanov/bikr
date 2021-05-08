@@ -65,6 +65,13 @@ Bike.init(
                 len: [5],
               },
         },
+<<<<<<< HEAD
+        image: {
+          type: DataTypes.STRING,
+          allowNull: true
+        }
+=======
+>>>>>>> main
       },
       {
         sequelize,
