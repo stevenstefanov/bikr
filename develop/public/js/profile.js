@@ -2,8 +2,9 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const name = document.querySelector('#project-name').value.trim();
-  // const needed_funding = document.querySelector('#project-funding').value.trim();
-  // const description = document.querySelector('#project-desc').value.trim();
+  // Define consts for all listing fields - title, type, color, size, etc
+
+  // if all fields have a value, create a POST method to the server
 
 //   if (name && needed_funding && description) {
 //     const response = await fetch(`/api/projects`, {
@@ -13,6 +14,8 @@ const newFormHandler = async (event) => {
 //         'Content-Type': 'application/json',
 //       },
 //     });
+
+  //if response is ok, reload the profile page  
 
 //     if (response.ok) {
 //       document.location.replace('/profile');
