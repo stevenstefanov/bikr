@@ -38,11 +38,11 @@ Bike.init(
         },
         // Frame size
         frame_size: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
         },
          // Wheel size
          wheel_size: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
         },
         // Color of the bike
         color: {
