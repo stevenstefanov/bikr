@@ -14,6 +14,7 @@ cloudinary.config({
 const fileUpload = multer();
 
 router.post('/', withAuth,  async (req, res) => {
+  console.log("test")
   try {
     const newBike = await Bike.create({
       ...req.body,

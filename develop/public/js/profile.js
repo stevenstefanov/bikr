@@ -10,14 +10,14 @@ const newFormHandler = async (event) => {
   const wheel_size = document.querySelector('#wheel-size').value.trim();
   const condition = document.querySelector('#bike-condition').value.trim();
   const zipcode = document.querySelector('#zipcode').value.trim();
-  const biketype = document.querySelector('#bike-type').value.trim();
+  const type = document.querySelector('#bike-type').value.trim();
   const description = document.querySelector('#post-desc').value.trim();
 
-  if (title && price && brand && color && frame_size && wheel_size && condition && zipcode && biketype && description) {
-   console.log('test')
+  if (title && price && brand && color && frame_size && wheel_size && condition && zipcode && type && description) {
+    console.log('test')
     const response = await fetch('/api/bicycles', {
       method: 'POST',
-      body: JSON.stringify({ title, biketype, brand, description, frame_size, wheel_size, color, condition, price, zipcode }),
+      body: JSON.stringify({ title, type, brand, description, frame_size, wheel_size, color, condition, price, zipcode }),
       headers: { 'Content-Type': 'application/json' },
     });
 
@@ -31,11 +31,11 @@ const newFormHandler = async (event) => {
 
 
 
-  // const needed_funding = document.querySelector('#project-funding').value.trim();
-  // const description = document.querySelector('#project-desc').value.trim();
-  // Define consts for all listing fields - title, type, color, size, etc
+// const needed_funding = document.querySelector('#project-funding').value.trim();
+// const description = document.querySelector('#project-desc').value.trim();
+// Define consts for all listing fields - title, type, color, size, etc
 
-  // if all fields have a value, create a POST method to the server
+// if all fields have a value, create a POST method to the server
 
 //   if (name && needed_funding && description) {
 //     const response = await fetch(`/api/projects`, {
@@ -46,7 +46,7 @@ const newFormHandler = async (event) => {
 //       },
 //     });
 
-  //if response is ok, reload the profile page  
+//if response is ok, reload the profile page  
 
 //     if (response.ok) {
 //       document.location.replace('/profile');
