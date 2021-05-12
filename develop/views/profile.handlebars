@@ -61,16 +61,7 @@
       </div>
       <div class="form-group">
         <label for="bike-color">Color:</label>
-        <select id="bike-color" name="bike-color">
-          <option value="bike-color-1">16"</option>
-          <option value="bike-color-2">20"</option>
-          <option value="bike-color-3">24"</option>
-          <option value="bike-color-4">26"</option>
-          <option value="bike-color-5">27.5"</option>
-          <option value="bike-color-6">29"</option>
-          <option value="bike-color-7">32"</option>
-          <option value="bike-color-8">Other</option>
-        </select>
+        <input class="form-input" type="text" id="bike-color" name="bike-color" /> 
       </div>
       <div class="form-group">
         <label for="bike-condition">Condition:</label>
@@ -93,7 +84,7 @@
 
   {{#if bikes.length}}
   <div class="col-md-6 project-list">
-    <h3>Your Bicycle Listings:</h3>
+    <h3>Your Listed Bicycles:</h3>
 
     {{#each bikes as |bike|}}
     <div class="row mb-2">
