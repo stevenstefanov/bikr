@@ -28,11 +28,11 @@ footer {
     border: 1px solid;
     border-color: #fff;
     border-radius: 5px;
-    background-color: #5e5656;
-    color: white;
+    background-color: #fff;
+    color: #848484;
     padding: 10px;
     font-family: 'Roboto', sans-serif;
-    box-shadow: 5px 5px 20px 5px #5e5656;
+    box-shadow: 5px 5px 20px 5px #ae9a9a;
 }
 
 .button {
