@@ -1,0 +1,27 @@
+
+                    {{#each bikes as |bike| }}
+
+                    <div class="card section-bikeProfile">
+                        <h2>
+                            <a href="/bicycles/{{bike.id}}">{{bike.title}}</a>
+                        </h2>
+                        <img class="card-img" src="{{bike.image}}">
+                        <div class="teamStatsTable">
+                            <div class="nba-title">Price: ${{bike.price}}</div>
+
+                            <table>
+                                <tr>
+                                    <td class="statsKeyTitle">Posted by: {{bike.user.name}} on {{format_date
+                                        bike.date_created}}</td>
+                                </tr>
+                                <tr>
+                                    <p>{{bike.description}}</p>
+                                </tr>
+                            </table>
+                        </div>
+
+                        {{/each}}
+
+                    
+    
+    </body>
