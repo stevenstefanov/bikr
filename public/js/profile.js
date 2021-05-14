@@ -1,6 +1,5 @@
 const newFormHandler = async (event) => {
   event.preventDefault();
-
   const title = document.querySelector('#post-title').value.trim();
   const price = document.querySelector('#selling-price').value.trim();
   const brand = document.querySelector('#bike-brand').value.trim();
@@ -30,7 +29,6 @@ const newFormHandler = async (event) => {
 const delButtonHandler = async (event) => {
   if (event.target.hasAttribute('data-id')) {
     const id = event.target.getAttribute('data-id');
-
     const response = await fetch(`/api/bicycles/${id}`, {
       method: 'DELETE',
     });

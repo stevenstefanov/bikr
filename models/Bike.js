@@ -37,7 +37,7 @@ Bike.init(
             type: DataTypes.STRING,
         },
         // Frame size
-        frame_size: {
+        frame_size: {           
             type: DataTypes.STRING,
         },
          // Wheel size

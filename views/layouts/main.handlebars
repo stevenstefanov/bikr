@@ -9,38 +9,30 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <div class="containerClass" style="width: 100%;">
-    <header class="">
+  <header class="containerClass; width: 100%">
       <!-- logo will be displayed at the left side of the header -->
       <a href="/"><img src="images/bikr-logo-long-red.png" style="max-width:150px; padding: 10px; float: left;"></a>
       <!-- login/logout buttons will be displayed at the right of the screen -->
-      <nav style="display:flex; flex-direction: column;">
+      <nav style="display:flex; flex-direction: row;">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
         <button><a href="/profile">profile</a></button> |
         <button id="logout">logout</button>
-        {{else}}          
+        {{else}}
         <a class="button" href="/login">login</a>
         {{/if}}
       </nav>
-    </header>
-    <main class="">
+  </header>
+  <main>
       <!-- Render the sub layout -->
       {{{ body }}}
-    </main>
-    <footer>
-      
-    </footer>
-  </div>
-
+  </main>
+  <footer>
+  </footer>
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="/js/logout.js"></script>
-  
   {{/if}}
-  
 </body>
-
 </html>
