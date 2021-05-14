@@ -12,17 +12,17 @@
 </head>
 
 <body>
-  <div class="containerClass">
+  <div class="containerClass" style="width: 100%;">
     <header class="">
-      <div>
-        <a href="/"><img src="images/bikr-logo.png" style="max-width:200px; padding: 10px;"></a>
-      </div>
+      <!-- logo will be displayed at the left side of the header -->
+      <a href="/"><img src="images/bikr-logo-long-red.png" style="max-width:150px; padding: 10px; float: left;"></a>
+      <!-- login/logout buttons will be displayed at the right of the screen -->
       <nav style="display:flex; flex-direction: column;">
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
-        <a href="/profile">profile</a> |
+        <button><a href="/profile">profile</a></button> |
         <button id="logout">logout</button>
-        {{else}}
+        {{else}}          
         <a class="button" href="/login">login</a>
         {{/if}}
       </nav>
