@@ -3,14 +3,12 @@
     <h2>Welcome, {{name}}!</h2>
   </div>
 </div>
-
 <div class="">
   <div class="">
-    <h3>Post a Bicycle for Sale:</h3>
-
-    <form class="form new-project-form">
+    <h3>List a Bicycle for Sale:</h3>
+    <form class="form new-bicycle-form">
       <div class="form-group">
-        <label for="post-title">Post Title:</label>
+        <label for="post-title">Listing Title:</label>
         <input class="form-input" type="text" id="post-title" name="post-title" />
       </div>
       <div class="form-group">
@@ -22,50 +20,77 @@
         <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
       </div>
       <div class="form-group">
-        <label for="selling-price">Bike Type:</label>
-        <input class="form-input" type="number" id="selling-price" name="selling-price" />
+        <label for="bike-type">Bicycle Type:</label>
+        <select id="bike-type" name="bike-type">
+          <option value="mountain-bike">Mountain Bicycle</option>
+          <option value="city-bike">City Bicycle</option>
+          <option value="street-bike">Street Bycicle</option>
+          <option value="other">Other</option>
+        </select>
       </div>
       <div class="form-group">
-        <label for="selling-price">Bike Brand:</label>
-        <input class="form-input" type="number" id="selling-price" name="selling-price" />
+        <label for="bike-brand">Bike Brand:</label>
+        <input class="form-input" type="text" id="bike-brand" name="bike-brand" />
       </div>
       <div class="form-group">
-        <label for="selling-price">Frame Size:</label>
-        <input class="form-input" type="number" id="selling-price" name="selling-price" />
+        <label for="frame-size">Frame Size:</label>
+        <select id="frame-size" name="frame-size">
+          <option value="frame-size-1">13-15</option>
+          <option value="frame-size-2">15-16</option>
+          <option value="frame-size-3">16-17</option>
+          <option value="frame-size-4">17-19</option>
+          <option value="frame-size-5">19-21</option>
+          <option value="frame-size-6">21</option>
+          <option value="frame-size-7">Other</option>
+        </select>
       </div>
       <div class="form-group">
-        <label for="selling-price">Wheel Size:</label>
-        <input class="form-input" type="number" id="selling-price" name="selling-price" />
+        <label for="wheel-size">Wheel Size:</label>
+        <select id="wheel-size" name="wheel-size">
+          <option value="wheel-size-1">16</option>
+          <option value="wheel-size-2">20</option>
+          <option value="wheel-size-3">24</option>
+          <option value="wheel-size-4">26</option>
+          <option value="wheel-size-5">27.5</option>
+          <option value="wheel-size-6">29</option>
+          <option value="wheel-size-7">32</option>
+          <option value="wheel-size-8">Other</option>
+        </select>
       </div>
       <div class="form-group">
-        <label for="selling-price">Color:</label>
-        <input class="form-input" type="number" id="selling-price" name="selling-price" />
+        <label for="bike-color">Color:</label>
+        <input class="form-input" type="text" id="bike-color" name="bike-color" /> 
       </div>
       <div class="form-group">
-        <label for="selling-price">Condition:</label>
-        <input class="form-input" type="number" id="selling-price" name="selling-price" />
+        <label for="bike-condition">Condition:</label>
+        <select id="bike-condition" name="bike-condition">
+          <option value="bike-condition-1">New</option>
+          <option value="bike-condition-2">Like New</option>
+          <option value="bike-condition-3">Used</option>
+          <option value="bike-condition-4">For Parts</option>
+        </select>
       </div>
       <div class="form-group">
-        <label for="selling-price">Your Zipcode:</label>
-        <input class="form-input" type="number" id="selling-price" name="selling-price" />
+        <label for="zipcode">Your Zipcode:</label>
+        <input class="form-input" type="text" id="zipcode" name="zipcode" />
       </div>
       <div class="form-group">
-        <button type="submit" class="btn btn-primary">Create</button>
+        <button type="submit" class="btn btn-primary" data-userid="{{usersPosts.id}}">List on Bikr</button>
       </div>
     </form>
   </div>
 
-  {{#if projects.length}}
-  <div class="col-md-6 project-list">
-    <h3>Current Projects:</h3>
+  {{#if bikes.length}}
+  <div class="col-md-6 bicycle-list">
+    <h3>Your Listed Bicycles:</h3>
 
-    {{#each projects as |project|}}
+    {{#each bikes as |bike|}}
     <div class="row mb-2">
       <div class="col-md-8">
-        <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+        <h4><a href="/bicycles/{{bike.id}}">{{bike.title}}</a></h4>
       </div>
       <div class="col-md-4">
-        <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+        <button class="btn btn-sm btn-danger" data-id="{{bike.id}}">DELETE</button>
       </div>
     </div>
     {{/each}}
