@@ -27,6 +27,7 @@ router.post('/', withAuth,  async (req, res) => {
 });
 
 router.patch('/:id/uploadImage', fileUpload.single('image'), async (req, res) => {
+  console.log(req.body);
   try {
     const upload = req => {
       return new Promise( (resolve, reject) => {
