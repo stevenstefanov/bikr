@@ -1,76 +1,105 @@
-:root{
+  :root{
     --global-section-width: 100%;
-    --text-color: #848484;
+    --text-color: firebrick;
     --title-font: 50px;
     --stats-font: 35px;
     --text-content-font: 20px;
 }
-
+a, a:hover, a:focus, a:active {
+    text-decoration: none;
+    color: inherit;
+}
+header {
+    width: 100%;
+    background-color: #fff;
+    padding: 5px;
+    margin-bottom:20px;
+    box-shadow: 2px 2px 2px 2px #bdbdbd;
+}
 body { 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     text-align: center;
-    background-color: #d9dadc;
+    background-color: #f0f0f0;
+    background-image: url("/images/bikr-logo-bgtile.png");
+    background-repeat: repeat;
+    font-family: 'Montserrat', sans-serif;
 }
-
-header {
-    width: var(--global-section-width);
-}
-
 footer {
     background-color: white;
 }
-
-.containerClass {
-    display: flex;
-    flex-direction: row;
-    border: 1px solid;
-    border-color: #fff;
-    border-radius: 5px;
-    background-color: #fff;
-    color: var(--text-color);
-    padding: 10px;
-    font-family: 'Roboto', sans-serif;
-    box-shadow: 5px 5px 20px 5px #ae9a9a;
-}
-
-.button {
+button {
     width: fit-content;
     background-color:firebrick;
     color: #fff;
-    text-decoration: none;
     padding: 10px;
-    margin: 10px;
+    margin: 5px;
+    border-width:0px;
+    font-family: 'Kanit', sans-serif;
+    font-size: 20px;
 }
-
+.containerClass {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    border-color: #fff;
+    background-color: #fff;
+    color: var(--text-color);
+    padding: 10px;
+    margin-bottom:10px;
+    margin-top:10px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 2px 2px 2px 2px #bdbdbd;
+}
+.innercontainerClass {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid;
+    border-color: #fff;
+    background-color: #efefef;
+    color: var(--text-color);
+    padding: 10px;
+    margin:10px;
+    font-family: 'Kanit', sans-serif;
+    box-shadow: 2px 2px 2px 2px #bdbdbd;
+}
+.homepageContainer {
+    width: 90%;
+}
 .bikeCard {
-    display:flex; 
-    justify-content: center; 
-    align-items: center; 
+    display:flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
     background-color: white;
-    color: var(--text-color); 
-    padding: 10px;
+    color: var(--text-color);
     width:100%;
-    box-shadow: 3px 3px 20px 5px #000;
-    margin: 50px;
+    box-shadow: 2px 2px 2px 2px #bdbdbd;
     transition: 0.4s ease-in-out;
+    font-family: 'Kanit', sans-serif;
+    margin: 20px 0;
 }
-
 /*///adds animation to bike card///*/
 .bikeCard:hover {
     transform: translate(0, -20px);
 }
+.new-bicycle-form {
+    width: 70%;
+    color:dimgray;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
 
+.card-img {
+    width: 33%;
+}
+/* .form-input {
+    width: 400px;
+} */
 /*///mobile media queries///*/
-
-
 @media only screen and (max-width: 400px) {
   }
-
   /*///tablet media queries///*/
-
 @media only screen and (max-width: 768px) {
   }
