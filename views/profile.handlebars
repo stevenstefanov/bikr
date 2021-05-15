@@ -91,8 +91,8 @@
       console.log("uploadImage test: ", result.secure_url);
         const response = await fetch('/api/bicycles/:id/uploadImage', {
           method: 'PATCH',
-          body: { "image": result.secure_url },
-          headers: { 'Content-Type': 'multipart/form-data' },
+          body: JSON.stringify({ "image": result.secure_url }),
+          headers: { 'Content-Type': 'application/json' },
         });
 
     if (response.ok) {
