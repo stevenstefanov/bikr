@@ -94,6 +94,11 @@ button {
 .card-img {
     width: 33%;
 }
+
+.homepageContainer img {
+    width: 50%
+}
+
 /* .form-input {
     width: 400px;
 } */
