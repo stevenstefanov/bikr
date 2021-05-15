@@ -13,70 +13,38 @@ cloudinary.config({
 
 const fileUpload = multer();
 
-router.post('/', withAuth,  async (req, res) => {
-  try {
-    const newBike = await Bike.create({
-      ...req.body,
-      user_id: req.session.user_id,
-    });
-
-    res.status(200).json(newBike);
-  } catch (err) {
-    res.status(400).json(err);
-  }
-});
-
-router.patch('/:id/uploadImage', fileUpload.single('image'), async (req, res) => {
+router.patch('/uploadImage', fileUpload.single('image'), async (req, res) => {
   console.log(req.body);
   try {
-    const upload = req => {
-      return new Promise( (resolve, reject) => {
-        const stream = cloudinary.uploader.upload_stream((error, result) => {
-            if (error) reject (error);
-            else resolve( result );
-        });
-
-        streamifier.createReadStream(req.file.buffer).pipe(stream);
-      });
-    }
-
-    let result = await upload(req);
-
-    console.log( result );
-
+    // const upload = req => {
+    //   return new Promise( (resolve, reject) => {
+    //   console.log("inside")
+    //     const stream = cloudinary.uploader.upload_stream((error, result) => {
+    //         if (error) {
+    //           console.log("ERROR ERROR ERRRO")
+    //           reject (error);
+    //         }
+    //         else {
+    //           console.log("resolved")
+    //           resolve( result );
+    //         }
+    //     });
+    //     streamifier.createReadStream(req.file.buffer).pipe(stream);
+    //   });
+    // }
+    // let result = await upload(req);
+    // console.log( "this is the " + result );
     const updatedBike = await Bike.update({
-      image: result.secure_url
+      image: req.body.image
     },
     {
-      where: { id : req.params.id }
+      where: { user_id : req.session.user_id }
     });
-
     res.json(updatedBike);
   } catch (err) {
     console.log(err)
     res.status(500).json(err)
   }
-
 } )
-
-router.delete('/:id', withAuth, async (req, res) => {
-  try {
-    const bikeData = await Bike.destroy({
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
-
-    if (!bikeData) {
-      res.status(404).json({ message: 'No bike found with this ID!' });
-      return;
-    }
-
-    res.status(200).json(bikeData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
 
 module.exports = router;

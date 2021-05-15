@@ -1,25 +1,27 @@
-<div class="containerClass">
+<div class="row">
+  <div class="col-auto">
     <h2>Welcome, {{name}}!</h2>
+  </div>
 </div>
-<div style="width:93%;" class="containerClass">
+<div class="">
   <div class="">
     <h3>List a Bicycle for Sale:</h3>
     <form class="form new-bicycle-form">
       <div class="form-group">
-        <label style="width: 35%; float: left;" for="post-title">Listing Title:</label>
-        <input style="width: 65%; float: right;" class="form-input" type="text" id="post-title" name="post-title" />
+        <label for="post-title">Listing Title:</label>
+        <input class="form-input" type="text" id="post-title" name="post-title" />
       </div>
       <div class="form-group">
-        <label style="width: 35%; float: left;" for="selling-price">Selling Price ($):</label>
-        <input style="width: 65%; float: right;" class="form-input" type="number" id="selling-price" name="selling-price" />
+        <label for="selling-price">Selling Price ($):</label>
+        <input class="form-input" type="number" id="selling-price" name="selling-price" />
       </div>
       <div class="form-group">
-        <label style="width: 35%; float: left;" for="post-desc">Description:</label>
-        <textarea style="width: 65%; float: right;" class="form-input" id="post-desc" name="post-desc"></textarea>
+        <label for="post-desc">Description:</label>
+        <textarea class="form-input" id="post-desc" name="post-desc"></textarea>
       </div>
       <div class="form-group">
-        <label style="width: 35%; float: left;" for="bike-type">Bicycle Type:</label>
-        <select style="width: 65%; float: right;" id="bike-type" name="bike-type">
+        <label for="bike-type">Bicycle Type:</label>
+        <select id="bike-type" name="bike-type">
           <option value="mountain-bike">Mountain Bicycle</option>
           <option value="city-bike">City Bicycle</option>
           <option value="street-bike">Street Bycicle</option>
@@ -27,41 +29,41 @@
         </select>
       </div>
       <div class="form-group">
-        <label style="width: 35%; float: left;" for="bike-brand">Bike Brand:</label>
-        <input style="width: 65%; float: right;" class="form-input" type="text" id="bike-brand" name="bike-brand" />
+        <label for="bike-brand">Bike Brand:</label>
+        <input class="form-input" type="text" id="bike-brand" name="bike-brand" />
       </div>
       <div class="form-group">
-        <label style="width: 35%; float: left;" for="frame-size">Frame Size:</label>
-        <select style="width: 65%; float: right;" id="frame-size" name="frame-size">
-          <option value="frame-size-1">13-15"</option>
-          <option value="frame-size-2">15-16"</option>
-          <option value="frame-size-3">16-17"</option>
-          <option value="frame-size-4">17-19"</option>
-          <option value="frame-size-5">19-21"</option>
-          <option value="frame-size-6">21"</option>
+        <label for="frame-size">Frame Size:</label>
+        <select id="frame-size" name="frame-size">
+          <option value="frame-size-1">13-15</option>
+          <option value="frame-size-2">15-16</option>
+          <option value="frame-size-3">16-17</option>
+          <option value="frame-size-4">17-19</option>
+          <option value="frame-size-5">19-21</option>
+          <option value="frame-size-6">21</option>
           <option value="frame-size-7">Other</option>
         </select>
       </div>
       <div class="form-group">
-        <label style="width: 35%; float: left;" for="wheel-size">Wheel Size:</label>
-        <select style="width: 65%; float: right;" id="wheel-size" name="wheel-size">
-          <option value="wheel-size-1">16"</option>
-          <option value="wheel-size-2">20"</option>
-          <option value="wheel-size-3">24"</option>
-          <option value="wheel-size-4">26"</option>
-          <option value="wheel-size-5">27.5"</option>
-          <option value="wheel-size-6">29"</option>
-          <option value="wheel-size-7">32"</option>
+        <label for="wheel-size">Wheel Size:</label>
+        <select id="wheel-size" name="wheel-size">
+          <option value="wheel-size-1">16</option>
+          <option value="wheel-size-2">20</option>
+          <option value="wheel-size-3">24</option>
+          <option value="wheel-size-4">26</option>
+          <option value="wheel-size-5">27.5</option>
+          <option value="wheel-size-6">29</option>
+          <option value="wheel-size-7">32</option>
           <option value="wheel-size-8">Other</option>
         </select>
       </div>
       <div class="form-group">
-        <label style="width: 35%; float: left;" for="bike-color">Color:</label>
-        <input style="width: 65%; float: right;" class="form-input" type="text" id="bike-color" name="bike-color" /> 
+        <label for="bike-color">Color:</label>
+        <input class="form-input" type="text" id="bike-color" name="bike-color" /> 
       </div>
       <div class="form-group">
-        <label style="width: 35%; float: left;" for="bike-condition">Condition:</label>
-        <select style="width: 65%;" id="bike-condition" name="bike-condition">
+        <label for="bike-condition">Condition:</label>
+        <select id="bike-condition" name="bike-condition">
           <option value="bike-condition-1">New</option>
           <option value="bike-condition-2">Like New</option>
           <option value="bike-condition-3">Used</option>
@@ -69,8 +71,8 @@
         </select>
       </div>
       <div class="form-group">
-        <label style="width: 35%; float: left;" for="zipcode">Your Zipcode:</label>
-        <input style="width: 65%; float: right;" class="form-input" type="text" id="zipcode" name="zipcode" />
+        <label for="zipcode">Your Zipcode:</label>
+        <input class="form-input" type="text" id="zipcode" name="zipcode" />
       </div>
       <div>
       </div>
@@ -78,15 +80,19 @@
         <button type="submit" class="btn btn-primary" data-userid="{{usersPosts.id}}">List on Bikr</button>
       </div>
     </form>
+
     <button id="upload_widget" class="cloudinary-button">Upload files</button>
+
     <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>  
+
     <script type="text/javascript">  
-    async function uploadImage(result) {
+
+   async function uploadImage(result) {
       console.log("uploadImage test: ", result.secure_url);
-        const response = await fetch('/api/bicycles/:id/uploadImage', {
+        const response = await fetch('/api/bicycles/uploadImage', {
           method: 'PATCH',
-          body: { "image": result.secure_url },
-          headers: { 'Content-Type': 'multipart/form-data' },
+          body: JSON.stringify({ "image": result.secure_url }),
+          headers: { 'Content-Type': 'application/json' },
         });
     if (response.ok) {
       console.log(response);
@@ -94,6 +100,7 @@
       alert(response.statusText);
     }
     }
+
     var myWidget = cloudinary.createUploadWidget({
       cloudName: 'dvubxzx4h', 
       uploadPreset: 'oux1btn7'}, (error, result) => { 
@@ -103,14 +110,16 @@
         }
       }
     )
+
     document.getElementById("upload_widget").addEventListener("click", function(){
         myWidget.open();
       }, false);
     </script>
+
     <script type="text/javascript">
     var generateSignature = function(callback, params_to_sign){
       $.ajax({
-       url     : "https://www.my-domain.com/my_generate_signature",
+       url     : “https://www.my-domain.com/my_generate_signature",
        type    : "GET",
        dataType: "text",
        data    : { data: params_to_sign},
@@ -119,20 +128,25 @@
        error   : function(xhr, status, error) { console.log(xhr, status, error); }
       });
     }
+
     cloudinary.applyUploadWidget(document.getElementById('upload_widget_opener'), 
     { api_key : "994225174582381", cloudName: "dvubxzx4h", uploadSignature: generateSignature }, 
     (error, result) => { });
+
   </script>
+    
   </div>
+
   {{#if bikes.length}}
-  <div class="innercontainerClass">
+  <div class="col-md-6 bicycle-list">
     <h3>Your Listed Bicycles:</h3>
+
     {{#each bikes as |bike|}}
-    <div class="">
-      <div class="">
+    <div class="row mb-2">
+      <div class="col-md-8">
         <h4><a href="/bicycles/{{bike.id}}">{{bike.title}}</a></h4>
       </div>
-      <div class="">
+      <div class="col-md-4">
         <button class="btn btn-sm btn-danger" data-id="{{bike.id}}">DELETE</button>
       </div>
     </div>
@@ -140,4 +154,5 @@
   </div>
   {{/if}}
 </div>
+
 <script src="./js/profile.js"></script>
