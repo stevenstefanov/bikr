@@ -1,7 +1,6 @@
 # PROJECT 02
 ## Bikr App
-* [Live Link](https://rocky-cliffs-71386.herokuapp.com/)
-* [Repo Link](https://github.com/stevenstefanov/bikr)
+* [Live Link](https://bikr-app.herokuapp.com/)
 
 ## Description
 This is an application that lets New Yorkers buy and sell bicycles. In a city of traffic jams and subway construction, it sometimes seems that the most reliable way to get around town is by bike. However, Citi bikes aren't always the most comfortable and a nicer brank new bike can set you back a few hundred if not a few thousand dollars. Here is where Bikr comes in. It's the perfect place to buy and sell bicycles, unlike Craigslist which is too broad and crowded with items. Here, a person can know that they will see only bikes and can find the exact one they want.
