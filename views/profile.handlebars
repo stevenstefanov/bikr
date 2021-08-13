@@ -83,37 +83,61 @@
       </form>
       
     </div>
+
+    {{#if bikes.length}}
+      <div class="innercontainerClass bicycle-list">
+        <h3>Your Listed Bicycles:</h3>
+        {{#each bikes as |bike|}}
+        <div class="">
+          <div class="">
+            <h4><a href="/bicycles/{{bike.id}}">{{bike.title}}</a></h4>
+          </div>
+          <div class="" style="display: flex, justify-content: center;">
+            <button class="btn btn-sm btn-danger delbtn" data-id="{{bike.id}}">DELETE</button>
+            <button class="btn btn-sm btn-danger uploadbtn upload_widget" data-id="{{bike.id}}">UPLOAD</button>
+          </div>
+        </div>
+        {{/each}}
+      </div>
+    {{/if}}
   
     <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
     <script type="text/javascript">
 
-      async function uploadImage(result) {
+      async function uploadImage(result, id) {
         console.log("uploadImage test: ", result.secure_url);
-        const response = await fetch('/api/bicycles/:id/uploadImage', {
+        const response = await fetch(`/api/bicycles/uploadImage/${id}`, {
           method: 'PATCH',
-          body: { "image": result.secure_url },
-          headers: { 'Content-Type': 'multipart/form-data' },
+          body: JSON.stringify({ "image": result.secure_url }),
+          headers: { 'Content-Type': 'application/json' },
         });
+        const data = await response.json()
         if (response.ok) {
-          console.log(response);
+          console.log(data);
         } else {
           alert(response.statusText);
         }
       }
 
-      var myWidget = cloudinary.createUploadWidget({
-        cloudName: 'dvubxzx4h',
-        uploadPreset: 'oux1btn7'
-      }, (error, result) => {
-        if (!error && result && result.event === "success") {
-          console.log('Done! Here is the image info: ', result.info);
-          uploadImage(result.info);
-        }
+      const uploadbtns = document.querySelectorAll(".upload_widget");
+      uploadbtns.forEach((button) => {
+        button.addEventListener("click", function (e) {
+          const id = event.target.getAttribute('data-id');
+          var myWidget = cloudinary.createUploadWidget({
+            cloudName: 'dvubxzx4h',
+            uploadPreset: 'oux1btn7'
+          }, (error, result) => {
+            if (!error && result && result.event === "success") {
+              console.log('Done! Here is the image info: ', result.info, id);
+              uploadImage(result.info, id);
+            } else {
+              console.log(error)
+            }
+          })
+          myWidget.open();
+        }, false);
+
       })
-          
-      document.getElementById("upload_widget").addEventListener("click", function () {
-        myWidget.open();
-      }, false);
 
       var generateSignature = function (callback, params_to_sign) {
         $.ajax({
@@ -132,21 +156,6 @@
         (error, result) => { });
     </script>
 
-    {{#if bikes.length}}
-    <div class="innercontainerClass bicycle-list">
-      <h3>Your Listed Bicycles:</h3>
-      {{#each bikes as |bike|}}
-      <div class="">
-        <div class="">
-          <h4><a href="/bicycles/{{bike.id}}">{{bike.title}}</a></h4>
-        </div>
-        <div class="">
-          <button class="btn btn-sm btn-danger" data-id="{{bike.id}}">DELETE</button>
-        </div>
-      </div>
-      {{/each}}
-    </div>
-    {{/if}}
   </div>
 </main>
 <script src="./js/profile.js"></script>

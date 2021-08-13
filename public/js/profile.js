@@ -46,5 +46,5 @@ document
   .addEventListener('submit', newFormHandler);
 
 document
-  .querySelector('.bicycle-list')
+  .querySelector('.delbtn')
   .addEventListener('click', delButtonHandler);
