@@ -1,7 +1,9 @@
+// Declare dependecies
 const router = require('express').Router();
 const { Bike, User } = require('../models');
 const withAuth = require('../utils/auth');
 
+// Routes
 router.get('/', async (req, res) => {
   try {
     // Get all bicycles and JOIN with user data

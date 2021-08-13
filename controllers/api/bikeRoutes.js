@@ -1,3 +1,4 @@
+// Declare dependencies
 const router = require('express').Router();
 const { Bike } = require('../../models');
 const withAuth = require('../../utils/auth');
@@ -5,6 +6,7 @@ const multer = require('multer');
 const cloudinary = require('cloudinary').v2;
 const streamifier = require('streamifier');
 
+// Cloudinary key configuration
 cloudinary.config({
   cloud_name: process.env.CLOUD_NAME,
   api_key: process.env.CLOUD_KEY,
@@ -13,6 +15,7 @@ cloudinary.config({
 
 const fileUpload = multer();
 
+// Routes
 router.post('/', withAuth, async (req, res) => {
   try {
     const newBike = await Bike.create({

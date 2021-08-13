@@ -89,7 +89,7 @@ button {
     margin: 20px 0;
 }
 
-/*///adds animation to bike card///*/
+/* Adds animation to bike card */
 .bikeCard:hover {
     transform: translate(0, -20px);
 }
@@ -108,12 +108,10 @@ button {
     width: 50%
 }
 
-/* .form-input {
-    width: 400px;
-} */
-/*///mobile media queries///*/
+
+/* Mobile media queries */
 @media only screen and (max-width: 400px) {
   }
-  /*///tablet media queries///*/
+  /* Tablet media queries */
 @media only screen and (max-width: 768px) {
   }

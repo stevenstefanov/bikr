@@ -1,6 +1,8 @@
+// Declare dependecies
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
+// Define Bike class
 class Bike extends Model {}
 
 Bike.init(
